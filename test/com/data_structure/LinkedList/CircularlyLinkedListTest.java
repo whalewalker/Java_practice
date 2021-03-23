@@ -1,5 +1,6 @@
-package com.algorithms.LinkedList;
+package com.data_structure.LinkedList;
 
+import com.data_structure.LinkedList.circularLinkedList.CircularlyLinkedList;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

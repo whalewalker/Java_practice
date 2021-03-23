@@ -1,4 +1,4 @@
-package com.algorithms.LinkedList;
+package com.data_structure.LinkedList.circularLinkedList;
 
 public class Node<T> {
     private T data;
