@@ -9,6 +9,6 @@ public interface Linkable<T> {
     void addLast(T t);
     T removeFirst() throws LinkedListUnderFlowException;
     T removeLast() throws LinkedListUnderFlowException;
-
-
+    T getSecondNode() throws LinkedListUnderFlowException;
+    T find(int index) throws LinkedListUnderFlowException;
 }

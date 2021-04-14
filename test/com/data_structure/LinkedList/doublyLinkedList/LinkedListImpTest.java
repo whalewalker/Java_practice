@@ -100,4 +100,24 @@ class LinkedListImpTest {
 
     }
 
+    @Test
+    void getAnyNodeAtSpecifiedIndex() throws LinkedListUnderFlowException {
+        list.addFirst("Hi");
+        list.addFirst("How");
+        list.addFirst("Hey");
+        list.addFirst("House");
+
+        assertEquals(list.find(3), "How");
+    }
+
+    @Test
+    void getSecondToLastNode() throws LinkedListUnderFlowException {
+        list.addFirst("Hi");
+        list.addFirst("How");
+        list.addFirst("Hey");
+        list.addFirst("House");
+
+        assertEquals(list.getSecondNode(), "Hey");
+    }
+
 }

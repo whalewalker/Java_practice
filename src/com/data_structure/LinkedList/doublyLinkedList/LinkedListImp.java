@@ -79,4 +79,30 @@ public class LinkedListImp<T> implements Linkable<T>{
         return remove(tailer.getPrev());
     }
 
+    @Override
+    public T find(int index) throws LinkedListUnderFlowException {
+        if(index < 0 || index >= size)  if(isEmpty()) throw new LinkedListUnderFlowException(message);
+        Node<T> currentNode;
+
+        if(index <= size / 2){
+            currentNode = header;
+            for(int count = 1; count <= index; count++){
+                currentNode = header.getNext();
+            }
+        }else {
+            currentNode = tailer;
+            for(int count = index; count >= 1; count--) {
+                currentNode = currentNode.getPrev();
+            }
+        }
+        return currentNode.getData();
+    }
+
+    @Override
+    public T getSecondNode() throws LinkedListUnderFlowException {
+        return find(2);
+    }
+
+
+
 }
