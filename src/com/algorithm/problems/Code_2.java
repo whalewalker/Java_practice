@@ -24,4 +24,29 @@ public class Code_2 {
     }
 
 
+    public boolean solve(int[] nums){
+        if(nums.length <= 1){
+            return false;
+        }
+
+        Arrays.sort(nums);
+
+        int count = 0;
+        int counter = 1;
+
+        while (counter < nums.length){
+            if(3 * nums[count] == nums[counter]){
+                return true;
+            }
+
+            if(3 * nums[count] > nums[counter]){
+                counter += 1;
+            }else {
+                count += 1;
+            }
+        }
+        return false;
+    }
+
+
 }
