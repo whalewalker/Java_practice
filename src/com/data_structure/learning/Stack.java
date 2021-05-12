@@ -9,7 +9,7 @@ package com.data_structure.learning;
 
 import java.util.List;
 
-public interface ArrayStack<T>{
+public interface Stack<T>{
     /*
     ∗ Returns the number of elements in the stack.
     ∗ @return number of elements in the stack

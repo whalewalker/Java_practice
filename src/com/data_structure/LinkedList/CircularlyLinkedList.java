@@ -1,4 +1,6 @@
-package com.data_structure.LinkedList.circularLinkedList;
+package com.data_structure.LinkedList;
+
+import com.data_structure.LinkedList.Node;
 
 public class CircularlyLinkedList<T> {
     private Node<T> tail;
@@ -6,7 +8,7 @@ public class CircularlyLinkedList<T> {
 
     public CircularlyLinkedList() {
         this.tail = null;
-        this.size = 0;
+        this.size = -1;
     }
 
     public void addFirst(T data) {
@@ -28,11 +30,11 @@ public class CircularlyLinkedList<T> {
     }
 
     public int size() {
-        return size;
+        return size + 1;
     }
 
     public boolean isEmpty() {
-        return size == 0;
+        return size == -1;
     }
 
     public T first() {

@@ -6,17 +6,20 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ADTTest {
-    ArrayStack<Integer> stack;
+class StackTest {
+    Stack<Integer> stack;
+    LinkedListStack<Integer> listStack;
 
     @BeforeEach
     void setUp() {
-        stack = new ArrayStackImpl<Integer>();
+        stack = new ArrayStackImpl<>();
+        listStack = new LinkedListStack<>();
     }
 
     @AfterEach
     void tearDown() {
         stack = null;
+        listStack = null;
     }
 
     @Test
@@ -45,7 +48,7 @@ class ADTTest {
 
     @Test
     void addDataToStackWhenStackIsFullThrowStackOverFlowException(){
-        ArrayStack<Integer> stack = new ArrayStackImpl<>(3);
+        Stack<Integer> stack = new ArrayStackImpl<>(3);
         stack.push(5);
         stack.push(7);
         stack.push(20);
@@ -62,6 +65,41 @@ class ADTTest {
     void peekWhenStackIsEmptyReturnNull(){
         assertNull(stack.top());
         assertTrue(stack.isEmpty());
+    }
+
+    @Test
+    void canAddDataToLinkedStack(){
+        addDataLinkedStack();
+        assertEquals(listStack.size(), 3);
+        assertFalse(listStack.isEmpty());
+        assertEquals(listStack.top(), 20);
+    }
+
+    private void addDataLinkedStack() {
+        listStack.push(5);
+        listStack.push(7);
+        listStack.push(20);
+    }
+
+    @Test
+    void canRemoveLastDataAddedToLinkedStack(){
+        addData();
+        listStack.pop();
+       assertEquals(listStack.size(), 1);
+        assertFalse(listStack.isEmpty());
+        assertEquals(listStack.top(), 5);
+    }
+
+    @Test
+    void popLinkedStackWhenEmptyReturnNull(){
+        assertNull(listStack.pop());
+        assertTrue(listStack.isEmpty());
+    }
+
+    @Test
+    void peekWhenLinkedStackIsEmptyReturnNull(){
+        assertNull(listStack.top());
+        assertTrue(listStack.isEmpty());
     }
 
 }

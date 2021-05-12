@@ -1,6 +1,6 @@
 package com.data_structure.learning;
 
-public class ArrayStackImpl<T> implements ArrayStack<T> {
+public class ArrayStackImpl<T> implements Stack<T> {
     public static final int CAPACITY = 8;
 
     private final T[] data;
