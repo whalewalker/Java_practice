@@ -1,5 +1,7 @@
 package com.data_structure.LinkedList;
 
+import java.util.LinkedList;
+
 public class SinglyLinkedList<T> {
     private Node<T> head;
     private Node<T> tail;
@@ -53,4 +55,19 @@ public class SinglyLinkedList<T> {
         size--;
         return answer.getData();
     }
+
+//    public boolean isStrictlyIncreasing(Node<T> head){
+//        if(head.getNext() == null){
+//            return true;
+//        }
+//
+//        while (head.getNext() != null){
+//            if(head.getData() > head.getNext().getData())
+//                head.setNext(head.getNext());
+//            return false;
+//        }
+//        return true;
+//    }
+
+
 }
